@@ -15,23 +15,23 @@ void GPIO_ResetBits(GPIO_Typedef*GPIOx,uint16_t GPIO_Pin)
  * GPIO_InitTypeDef:GPIO_InitTypeDef 结构体指针，指向初始化变量
  */
  void GPIO_Init(GPIO_Typedef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
- {
- uint32_t currentmode =0x00,currentpin = 0x00,pinpos = 0x00,pos = 0x00;
- uint32_t tmpreg = 0x00, pinmask = 0x00;
-
+{
+		uint32_t currentmode =0x00,currentpin = 0x00,pinpos = 0x00,pos = 0x00;
+		uint32_t tmpreg = 0x00, pinmask = 0x00;
+ 
 /*---------------- GPIO 模式配置 -------------------*/
 // 把输入参数 GPIO_Mode 的低四位暂存在 currentmode
-currentmode = ((uint32_t)GPIO_InitStruct->GPIO_Mode) &
-((uint32_t)0x0F);
+		currentmode = ((uint32_t)GPIO_InitStruct->GPIO_Mode) &
+		((uint32_t)0x0F);
 
 // bit4 是 1 表示输出， bit4 是 0 则是输入
 // 判断 bit4 是 1 还是 0 ，即首选判断是输入还是输出模式
-if ((((uint32_t)GPIO_InitStruct->GPIO_Mode) &
-((uint32_t)0x10)) != 0x00)
-{
+		if ((((uint32_t)GPIO_InitStruct->GPIO_Mode) &
+		((uint32_t)0x10)) != 0x00)
+	{
 // 输出模式则要设置输出速度
-currentmode |= (uint32_t)GPIO_InitStruct->GPIO_Speed;
-}
+		currentmode |= (uint32_t)GPIO_InitStruct->GPIO_Speed;
+	}	
 /*-----GPIO CRL 寄存器配置 CRL 寄存器控制着低 8 位 IO- ----*/
 // 配置端口低 8 位，即 Pin0~Pin7
 if (((uint32_t)GPIO_InitStruct->GPIO_Pin &

@@ -41,7 +41,7 @@ int main (void)
 	GPIO_INIT.GPIO_Speed  = GPIO_PIN_SPEED_10MHZ;
 	GPIO_Init(GPIOB, &GPIO_INIT);
 	//设置端口输出寄存器ODR为输出低电平
-	GPIO_SetBits(GPIOB,GPIO_Pin_5);
+	GPIO_ResetBits(GPIOB,GPIO_Pin_5);
 #endif
 
 }
