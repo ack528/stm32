@@ -1,6 +1,7 @@
 #include "stm32f10x.h"
-#include "bsp_led.h"
-
+#include "bsp_user_led.h"
+#include "bsp_user_key.h"
+#include "SysTick.h"
 void delay(uint32_t num)
 {
 	for(;num>0;num--)
@@ -9,15 +10,19 @@ void delay(uint32_t num)
 
 int main()
 {
+
 	USER_LED0();
-	USER_LED1();
+	Bsp_user_key1_init();
+	SysTick_Init(72);
+	
 	while(1)
 	{
-		User_led0(ON);
-		delay(0xFFFFF);
-		User_led0(OFF);
-		User_led1(ON);
-		delay(0xFFFFF);
-		User_led1(OFF);
+		if(key_scan(User_Key1_Port,User_Key1_Pin) ==1)
+		  {
+				User_led0(OFF);
+				
+			}
+		
 	}
+	
 }

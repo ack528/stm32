@@ -12,6 +12,7 @@
 
 #define User_led0(a) if(a) GPIO_ResetBits(GPIOB,GPIO_Pin_5); else GPIO_SetBits(GPIOB,GPIO_Pin_5);
 #define User_led1(a) if(a) GPIO_ResetBits(GPIOE,GPIO_Pin_5); else GPIO_SetBits(GPIOE,GPIO_Pin_5);
+#define LED_OVERTURN 
 
 void USER_LED0(void);//用户LED0
 void USER_LED1(void);//用户LED1
