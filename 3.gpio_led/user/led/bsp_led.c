@@ -17,3 +17,18 @@ void USER_LED1(void)//初始化用户LED1
 	GPIO_INIT_STRUCT.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(USER_LED1_PORT, &GPIO_INIT_STRUCT);
 }
+void User_led0(uint16_t statu)
+{
+	if(statu) 
+	GPIO_ResetBits(GPIOB,GPIO_Pin_5); 
+	else 
+	GPIO_SetBits(GPIOB,GPIO_Pin_5);
+}
+void User_led1(uint16_t statu)
+{
+	if(statu) 
+	GPIO_ResetBits(GPIOE,GPIO_Pin_5); 
+	else 
+	GPIO_SetBits(GPIOE,GPIO_Pin_5);
+}
+

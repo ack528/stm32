@@ -7,12 +7,17 @@
 #define USER_LED1_PORT GPIOE
 #define USER_LED1_PIN  GPIO_Pin_5
 
-#define ON 1
-#define OFF 0
-
-#define User_led0(a) if(a) GPIO_ResetBits(GPIOB,GPIO_Pin_5); else GPIO_SetBits(GPIOB,GPIO_Pin_5);
-#define User_led1(a) if(a) GPIO_ResetBits(GPIOE,GPIO_Pin_5); else GPIO_SetBits(GPIOE,GPIO_Pin_5);
 
 void USER_LED0(void);//用户LED0
 void USER_LED1(void);//用户LED1
+
+typedef enum
+{
+	user_led_on = 1,
+	user_led_off = 0
+}user_led_para;
+
+
+void User_led0(uint16_t statu);//开关userled
+void User_led1(uint16_t statu);
 #endif

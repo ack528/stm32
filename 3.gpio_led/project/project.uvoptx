@@ -223,7 +223,7 @@
 
   <Group>
     <GroupName>fwlib</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -375,7 +375,7 @@
       <GroupNumber>3</GroupNumber>
       <FileNumber>16</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</PathWithFileName>
@@ -539,7 +539,7 @@
       <GroupNumber>4</GroupNumber>
       <FileNumber>29</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\user\led\bsp_led.c</PathWithFileName>
